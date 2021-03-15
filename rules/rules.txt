@@ -1,0 +1,74 @@
+rules:
+- expr: data[2:8] > 0
+  name: V1
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: data$Max.Price > data$Min.Price
+  name: V2
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: all_unique(data$Date)
+  name: V3
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: data$Min.Price < data$Max.Price
+  name: V4
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: data$Closing.Price - data$Prev..Closing == data$Difference.Rs.
+  name: V5
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: if (data$No.of.Transactions == 0) data$Traded.Shares == 0
+  name: V6
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: if (data$No.of.Transactions == 0) data$Total.Amount == 0
+  name: V7
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+- expr: X..Change == (Difference.Rs./Prev..Closing) * 100
+  name: V8
+  label: ''
+  description: ''
+  created: 2021-03-15 00:12:31
+  origin: command-line
+  meta:
+    language: validate 1.0.1
+    severity: error
+

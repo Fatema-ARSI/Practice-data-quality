@@ -1,0 +1,40 @@
+rules:
+- expr: if (Closing.Price - Prev..Closing != Difference.Rs.) Difference.Rs. <- Closing.Price
+    - Prev..Closing
+  name: M1
+  label: ''
+  description: ''
+  created: 2021-03-15 00:40:29
+  origin: command-line
+  meta: []
+- expr: if (No.of.Transactions == 0) Traded.Shares <- 0
+  name: M2
+  label: ''
+  description: ''
+  created: 2021-03-15 00:40:29
+  origin: command-line
+  meta: []
+- expr: if (No.of.Transactions == 0) Total.Amount <- 0
+  name: M3
+  label: ''
+  description: ''
+  created: 2021-03-15 00:40:29
+  origin: command-line
+  meta: []
+- expr: if (X..Change != (Difference.Rs./Prev..Closing) * 100) X..Change <- round(((data$Difference.Rs./data$Prev..Closing)
+    * 100), digit = 2)
+  name: M4
+  label: ''
+  description: ''
+  created: 2021-03-15 00:40:29
+  origin: command-line
+  meta: []
+- expr: if (Difference.Rs. != Closing.Price - data$Prev..Closing) Difference.Rs. <-
+    Closing.Price - data$Prev..Closing
+  name: M5
+  label: ''
+  description: ''
+  created: 2021-03-15 00:40:29
+  origin: command-line
+  meta: []
+
