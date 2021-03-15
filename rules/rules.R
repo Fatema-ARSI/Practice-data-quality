@@ -1,7 +1,5 @@
 library("validate")
-library('varhandle')
-library(dplyr)
-install.packages('varhandle')
+
 filename= 'reinsurance stock price nepal.csv'
 hasheader = TRUE
 
